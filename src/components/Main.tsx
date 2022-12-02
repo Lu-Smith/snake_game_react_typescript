@@ -4,10 +4,10 @@ import Snake from '../images/snake - Copy.png'
 import Apple from '../images/apple.png'
 import useInterval from './useInterval'
 
-const canvasX = 500
+const canvasX = 800
 const canvasY = 500
-const initialSnake = [[4,10], [4,10]]
-const initialApple = [14, 10]
+const initialSnake = [[4,15], [4,15]]
+const initialApple = [4, 6]
 const scale = 20
 const timeDelay = 100
 
@@ -65,7 +65,7 @@ const Main = () => {
 	}
 
 	function appleAte(newSnake: number[][]) {
-		let coord = apple.map(() => Math.floor(Math.random() * canvasX / scale))
+		let coord = apple.map(() => Math.floor(Math.random() * canvasX / scale / 2))
 		if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
 			let newApple = coord
 			setScore(score + 1)
@@ -90,7 +90,6 @@ const Main = () => {
 		setSnake(newSnake)
   }
 
-
   const changeDirection = (e: React.KeyboardEvent<HTMLDivElement>) => {
 		switch (e.key) {
 			case "ArrowLeft":
@@ -114,7 +113,7 @@ const Main = () => {
         <h2> Score: {score} </h2>
         <h2> High Score: {score}</h2>
       </div>
-      <img src={Apple} id='fruit' width='30' alt="an apple illustration created by Luna Smith"/>
+      <img src={Apple} id='fruit' width='50' alt="an apple illustration created by Luna Smith"/>
       <canvas className='playArea' ref={canvasRef} width={`${canvasX}px`} height={`${canvasY}px`} />
       {gameOver && <div className='gameOver'>Game Over</div>}
       <button className='playButton' onClick={startGame}>Play<img src={Snake} width='90' alt=" a snake illustration created by Luna Smith"/></button>

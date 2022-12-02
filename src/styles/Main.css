@@ -34,3 +34,9 @@
     display: none;
 }
 
+.Main .gameOver {
+    color: red;
+    letter-spacing: 20px;
+    font-weight: 800;
+    font-size: 30px
+}
