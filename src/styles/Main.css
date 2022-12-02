@@ -6,3 +6,7 @@
     justify-content: center;
     font-size: 40px;
 }
+
+.Main canvas {
+    background-color: black;
+}
