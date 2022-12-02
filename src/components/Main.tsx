@@ -8,7 +8,7 @@ const canvasX = 500
 const canvasY = 500
 const initialSnake = [[4,10], [4,10]]
 const initialApple = [14, 10]
-const scale = 50
+const scale = 20
 const timeDelay = 100
 
 const Main = () => {
@@ -45,6 +45,14 @@ const Main = () => {
 		}
 	}
 
+  const startGame = () => {
+    setSnake(initialSnake)
+    setApple(initialApple)
+    setScore(0)
+    setGameOver(false)
+    setDelay(timeDelay)
+    setDirection([ 1, 0 ])
+  }
 
   const checkCollision = (head: number[]) => {
 		for (let i = 0; i < head.length; i++) {
@@ -82,14 +90,6 @@ const Main = () => {
 		setSnake(newSnake)
   }
 
-  const startGame = () => {
-    setSnake(initialSnake)
-    setApple(initialApple)
-    setScore(0)
-    setGameOver(false)
-    setDelay(timeDelay)
-    setDirection([ 1, 0 ])
-  }
 
   const changeDirection = (e: React.KeyboardEvent<HTMLDivElement>) => {
 		switch (e.key) {
