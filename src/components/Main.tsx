@@ -33,7 +33,7 @@ const Main = () => {
 					ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
 					ctx.fillStyle = "#a3d001"
 					snake.forEach(([ x, y ]) => ctx.fillRect(x, y, 1, 1))
-					ctx.drawImage(fruit, apple[0], apple[1], 1, 1)
+					ctx.drawImage(fruit, apple[0], apple[1], 2, 2)
 				}
 			}
 		},
@@ -113,7 +113,7 @@ const Main = () => {
         <h2> Score: {score} </h2>
         <h2> High Score: {score}</h2>
       </div>
-      <img src={Apple} id='fruit' width='50' alt="an apple illustration created by Luna Smith"/>
+      <img src={Apple} id='fruit' alt="an apple illustration created by Luna Smith"/>
       <canvas className='playArea' ref={canvasRef} width={`${canvasX}px`} height={`${canvasY}px`} />
       {gameOver && <div className='gameOver'>Game Over</div>}
       <button className='playButton' onClick={startGame}>Play<img src={Snake} width='90' alt=" a snake illustration created by Luna Smith"/></button>
