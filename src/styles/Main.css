@@ -4,9 +4,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     font-size: 40px;
 }
 
 .Main canvas {
     background-color: black;
+}
+
+.Main button {
+    padding: 15px 20px;
+    font-size: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
 }

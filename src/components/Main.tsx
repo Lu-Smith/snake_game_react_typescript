@@ -7,7 +7,8 @@ const canvasY = 600
 const Main = () => {
   return (
     <div className='Main'>
-      <canvas className='playArea' width={`${canvasX}px`} height={`${canvasY}px`}/>
+      <canvas className='playArea' width={`${canvasX}px`} height={`${canvasY}px`} />
+      <button>Play</button>
     </div>
   )
 }
