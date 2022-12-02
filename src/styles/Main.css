@@ -8,18 +8,25 @@
     font-size: 20px;
 }
 
+.Main h2 {
+    font-style: italic;
+    margin-bottom: 10px;
+} 
+
 .Main canvas {
     background-color: black;
 }
 
 .Main button {
-    padding: 15px 20px;
+    position: relative;
+    padding-left: 20px;
     font-size: 20px;
     border-radius: 15px;
+    color: white;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
 }
 
-h2 {
-    font-style: italic;
-    margin-bottom: 10px;
-}

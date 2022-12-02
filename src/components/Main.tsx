@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Main.css'
+import Snake from '../images/snake - Copy.png'
 
 const canvasX = 600
 const canvasY = 600
@@ -12,8 +13,7 @@ const Main = () => {
         <h2> High Score: </h2>
       </div>
       <canvas className='playArea' width={`${canvasX}px`} height={`${canvasY}px`} />
-      <button className='playButton'>Play</button>
-     
+          <button className='playButton'>Play<img src={Snake} width='90'/></button>
     </div>
   )
 }
