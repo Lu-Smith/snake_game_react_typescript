@@ -31,14 +31,20 @@ const Main = () => {
 				if (ctx) {
 					ctx.setTransform(scale, 0, 0, scale, 0, 0)
 					ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-					snake.forEach(([ x, y ]) => {
+					snake.forEach(([ x , y ]) => {
 						ctx.beginPath();
-                        ctx.arc(x, y, 0.9, 0, 2 * Math.PI, false);
-					    ctx.fillStyle = "#a3d001"
-						ctx.fill()})
-					ctx.drawImage(fruit, apple[0], apple[1], 2, 2)
-				}
-			}
+                        ctx.arc(x, y, 0.8, 0, 2 * Math.PI, false);
+							if (snake.length % 2 === 0) {
+								ctx.fillStyle = "#a3d001"
+							} else {
+								ctx.fillStyle = "#0d9123"
+							}
+						ctx.fill()
+						console.log(snake.length)
+				    })
+				    ctx.drawImage(fruit, apple[0], apple[1], 2, 2)
+				    
+			    }}
 		},
 		[ snake, apple, gameOver ])
 
@@ -91,11 +97,6 @@ const Main = () => {
 			newSnake.pop()
 		}
 		setSnake(newSnake)
-
-		console.log(newSnake[0][0])
-		console.log(apple[0])
-		console.log(newSnake[0][1])
-		console.log(apple[1])
   }
 
   const changeDirection = (e: React.KeyboardEvent<HTMLDivElement>) => {
