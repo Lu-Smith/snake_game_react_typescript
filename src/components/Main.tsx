@@ -33,7 +33,7 @@ const Main = () => {
 					ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
 					snake.forEach(([ x , y ]) => {
 						ctx.beginPath();
-                        ctx.arc(x, y, 0.8, 0, 2 * Math.PI, false);
+                        ctx.arc(x, y, 0.7, 0, 2 * Math.PI, false);
 							if (snake.length % 2 === 0) {
 								ctx.fillStyle = "#a3d001"
 							} else {
@@ -120,7 +120,7 @@ const Main = () => {
     <div className='Main' onKeyDown={(e) => changeDirection(e)}>
        <div className="score">
         <h2> Score: {score} </h2>
-        <h2> High Score: {score}</h2>
+        <h2> High Score: {localStorage.getItem("snakeScore")}</h2>
       </div>
       <img src={Apple} id='fruit' alt="an apple illustration created by Luna Smith"/>
       <canvas className='playArea' ref={canvasRef} width={`${canvasX}px`} height={`${canvasY}px`} />
