@@ -4,8 +4,14 @@ import Snake from '../images/snake - Copy.png'
 import Apple from '../images/apple.png'
 import useInterval from './useInterval'
 
-const canvasX = 800
-const canvasY = 500
+
+let canvasX: number;
+if (window.outerWidth <= 820) {
+	canvasX = window.outerWidth / 1.2
+} else {
+    canvasX = window.outerWidth / 2
+}
+const canvasY = window.outerHeight / 2
 const initialSnake = [[4,15], [4,15]]
 const initialApple = [4, 6]
 const scale = 20
@@ -40,7 +46,6 @@ const Main = () => {
 								ctx.fillStyle = "#0d9123"
 							}
 						ctx.fill()
-						console.log(snake.length)
 				    })
 				    ctx.drawImage(fruit, apple[0], apple[1], 2, 2)
 				    
