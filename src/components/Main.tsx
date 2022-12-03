@@ -31,8 +31,11 @@ const Main = () => {
 				if (ctx) {
 					ctx.setTransform(scale, 0, 0, scale, 0, 0)
 					ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-					ctx.fillStyle = "#a3d001"
-					snake.forEach(([ x, y ]) => ctx.fillRect(x, y, 1, 1))
+					snake.forEach(([ x, y ]) => {
+						ctx.beginPath();
+                        ctx.arc(x, y, 0.9, 0, 2 * Math.PI, false);
+					    ctx.fillStyle = "#a3d001"
+						ctx.fill()})
 					ctx.drawImage(fruit, apple[0], apple[1], 2, 2)
 				}
 			}
@@ -66,7 +69,7 @@ const Main = () => {
 
 	function appleAte(newSnake: number[][]) {
 		let coord = apple.map(() => Math.floor(Math.random() * canvasX / scale / 2))
-		if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
+		if (newSnake[0][0] - 1 === apple[0] && (newSnake[0][1]- 1) === apple[1]) {
 			let newApple = coord
 			setScore(score + 1)
 			setApple(newApple)
@@ -88,6 +91,11 @@ const Main = () => {
 			newSnake.pop()
 		}
 		setSnake(newSnake)
+
+		console.log(newSnake[0][0])
+		console.log(apple[0])
+		console.log(newSnake[0][1])
+		console.log(apple[1])
   }
 
   const changeDirection = (e: React.KeyboardEvent<HTMLDivElement>) => {
