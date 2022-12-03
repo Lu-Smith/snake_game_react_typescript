@@ -39,13 +39,33 @@ const Main = () => {
 					ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
 					snake.forEach(([ x , y ]) => {
 						ctx.beginPath();
-                        ctx.arc(x, y, 0.7, 0, 2 * Math.PI, false);
+						if (snake === initialSnake) {
+							ctx.strokeStyle = "#c1e205"
+							ctx.lineWidth = 0.5;
+							ctx.arc(x, y, 1, 0, Math.PI * 2, true); // Outer circle
+							ctx.moveTo(x + 0.6, y + 0.15)
+							ctx.lineWidth = 0.3;
+							ctx.arc(x, y + 0.1, 0.6, 0, Math.PI, false); // Mouth (clockwise)
+							ctx.moveTo(x - 0.4, y - 0.9);
+							ctx.arc(x - 0.4 , y - 0.4, 0.3, 0, Math.PI * 2, false); // Left eye
+							ctx.moveTo(x + 0.4, y - 0.9);
+							ctx.arc(x + 0.4 , y - 0.4, 0.3, 0, Math.PI * 2, false); // Right eye
+							ctx.moveTo(x - 0.4, y - 1.9);
+							ctx.arc(x - 0.8 , y - 1.9, 0.3, 0, Math.PI * 2, false); // Left ear
+							ctx.moveTo(x + 0.4, y - 1.9);
+							ctx.arc(x + 0.8 , y - 1.9, 0.3, 0, Math.PI * 2, false); // Right ear
+							ctx.stroke();
+						} else {
+							ctx.arc(x, y, 0.7, 0, 2 * Math.PI, false);
 							if (snake.length % 2 === 0) {
 								ctx.fillStyle = "#a3d001"
 							} else {
 								ctx.fillStyle = "#0d9123"
 							}
+							
+						}
 						ctx.fill()
+						
 				    })
 				    ctx.drawImage(fruit, apple[0], apple[1], 2, 2)
 				    
