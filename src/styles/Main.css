@@ -13,6 +13,10 @@
     margin-bottom: 10px;
 } 
 
+.Main .highScore {
+    color: red;
+}
+
 .Main canvas {
     background-color: black;
     box-shadow: 3px 3px 3px rgba(0, 0 , 0, 0.5);
@@ -31,6 +35,7 @@
     margin-top: 20px;
     border: 4px solid rgb(173, 7, 7);
     box-shadow: 3px 3px 3px rgba(0, 0 , 0, 0.5);
+    font-family: 'Roboto', sans-serif;
 }
 
 #fruit {
