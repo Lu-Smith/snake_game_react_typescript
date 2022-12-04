@@ -50,10 +50,6 @@ const Main = () => {
 							ctx.arc(x - 0.4 , y - 0.4, 0.3, 0, Math.PI * 2, false); // Left eye
 							ctx.moveTo(x + 0.4, y - 0.9);
 							ctx.arc(x + 0.4 , y - 0.4, 0.3, 0, Math.PI * 2, false); // Right eye
-							ctx.moveTo(x - 0.4, y - 1.9);
-							ctx.arc(x - 0.8 , y - 1.9, 0.3, 0, Math.PI * 2, false); // Left ear
-							ctx.moveTo(x + 0.4, y - 1.9);
-							ctx.arc(x + 0.8 , y - 1.9, 0.3, 0, Math.PI * 2, false); // Right ear
 							ctx.stroke();
 						} else {
 							ctx.arc(x, y, 0.7, 0, 2 * Math.PI, false);
