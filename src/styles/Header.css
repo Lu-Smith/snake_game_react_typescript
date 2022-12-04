@@ -7,3 +7,9 @@
     font-size: 40px;
     font-family: 'Zen Dots', cursive;
 }
+
+@media only screen and (max-width: 600px) {
+    .Header {
+        font-size: 25px;
+    }
+}
