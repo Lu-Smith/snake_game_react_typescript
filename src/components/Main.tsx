@@ -138,8 +138,8 @@ const Main = () => {
   return (
     <div className='Main' onKeyDown={(e) => changeDirection(e)}>
        <div className="score">
-        <h2>Score: {score}</h2>
-        <h2 className='highScore'>High Score: {localStorage.getItem("snakeScore")}</h2>
+        <h2><img src={Apple} alt="an apple illustration created by Luna Smith"/><span>{score}</span></h2>
+        <h3>High Score: {localStorage.getItem("snakeScore")}</h3>
       </div>
       <img src={Apple} id='fruit' alt="an apple illustration created by Luna Smith"/>
       <canvas className='playArea' ref={canvasRef} width={`${canvasX}px`} height={`${canvasY}px`} />

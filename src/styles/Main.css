@@ -9,13 +9,31 @@
 }
 
 .Main h2 {
-    font-style: italic;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 10px;
 } 
 
-.Main .highScore {
-    color: red;
+.Main h2 span {
+    background-color: red;
+    color: rgb(250, 250, 177);
+    padding: 10px 29px;
+    border-radius: 50%;
 }
+
+.Main h2 img {
+    width: 60px;
+}
+
+.Main h3 {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: red;
+} 
+
+
 
 .Main canvas {
     background-color: black;
