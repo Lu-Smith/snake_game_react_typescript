@@ -69,8 +69,6 @@ const Main = () => {
 							}
 							ctx.fill()
 						}
-						
-						
 				    })
 				    ctx.drawImage(fruit, apple[0], apple[1], 2, 2)
 			    }}
