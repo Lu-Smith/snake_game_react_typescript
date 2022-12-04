@@ -51,15 +51,25 @@ const Main = () => {
 							ctx.moveTo(x + 0.4, y - 0.9);
 							ctx.arc(x + 0.4 , y - 0.4, 0.3, 0, Math.PI * 2, false); // Right eye
 							ctx.stroke();
-						} else {
+							ctx.fill()
+						} else if (snake !== initialSnake && snake.length < 22) {
 							ctx.arc(x, y, 0.7, 0, 2 * Math.PI, false);
 							if (snake.length % 2 === 0) {
 								ctx.fillStyle = "#a3d001"
 							} else {
 								ctx.fillStyle = "#0d9123"
 							}
+							ctx.fill()
+						} else {
+							ctx.arc(x, y, 0.7, 0, 2 * Math.PI, false);
+							if (snake.length % 2 === 0) {
+								ctx.fillStyle = "#bf48f7"
+							} else {
+								ctx.fillStyle = "#0af3f3"
+							}
+							ctx.fill()
 						}
-						ctx.fill()
+						
 						
 				    })
 				    ctx.drawImage(fruit, apple[0], apple[1], 2, 2)
