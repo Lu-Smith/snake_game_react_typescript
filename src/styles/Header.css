@@ -8,8 +8,16 @@
     font-family: 'Zen Dots', cursive;
 }
 
+.Header img {
+    width: 90px;
+}
+
 @media only screen and (max-width: 600px) {
     .Header {
         font-size: 25px;
     }
+    .Header img {
+        width: 70px;
+    }
+
 }

@@ -5,7 +5,7 @@ import Snake from '../images/snake.png'
 const Header = () => {
   return (
     <div className='Header'>
-       <img src={Snake} width='90' alt="a snake illustration created by Luna Smith"/><span>Snake Game</span>
+       <img src={Snake} alt="a snake illustration created by Luna Smith"/><span>Snake Game</span>
     </div>
   )
 }
